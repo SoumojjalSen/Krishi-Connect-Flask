@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../reset-meyer.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='marketplace.css') }}">
+    <title>Market Place</title>
+</head>
+<body>
+<div id="navbar">
+    <ul class="navbar-links">
+        <li><a href="{{ url_for('home') }}">Home</a></li>
+        <li><a href="{{ url_for('dashboard') }}">Dashboard</a></li>
+    </ul>
+    <p>User Name: {{ user.name }}</p>
+</div>
+<div id="container">
+    
+    <div id="table">
+        <h2>Product List</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>S.No</th>
+                    <th>Seller and Contact</th>
+                    <th>Machinery</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Add table rows with data here -->
+                {% for item in items %}
+                <tr>
+                    <td>{{ loop.index }}</td>
+                    <td>{{ item[0] }}</td>
+                    <td>{{ item[1].item }}</td>
+                    <td>{{ item[1].quantity }}</td>
+                    <td>{{ item[1].cost }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <button class="sell-button"><a href="{{ url_for('create') }}">IF YOU WANT TO SELL, CLICK HERE</a></button>
+    </div>
+</div>
+</body>
+</html>

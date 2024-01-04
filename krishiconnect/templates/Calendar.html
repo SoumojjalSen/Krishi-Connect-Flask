@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crop Calendar</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5dc;
+            color: #008000;
+        }
+
+        header {
+            background-color: #006400;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 36px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            height: 50vh;
+            width: 80vw;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+
+        #submit {
+            display: block;
+            padding: 10px 20px;
+            background-color: #006400;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        p {
+            font-size: 18px;
+            margin-top: 20px;
+        }
+
+        .navbar {
+            background-color: #006400;
+            overflow: hidden;
+        }
+
+        .navbar a {
+            float: left;
+            display: block;
+            color: #fff;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        .navbar a:hover {
+            background-color: #008000;
+        }
+
+        .navbar::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+        .info {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100%;
+            width: 100%;
+        }
+        #harvsetTime {
+            font-size: 100px;
+            
+        }
+        form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="{{ url_for('home') }}">Home</a>
+        <a href="{{ url_for('dashboard') }}">Dashboard</a>
+    </div>
+    <header>
+        <h1>Crop Calendar</h1>
+    </header>
+    <div class="container">
+        <!-- <label for="cropName">Enter the name of the crop:</label>
+        <input type="text" id="cropName" name="cropName"> -->
+        <form action="" method="post">
+            {{ form.hidden_tag() }}
+            {{ form.crop }}
+            {{ form.submit(id="submit") }}
+        </form>
+        <div class="info">
+        <div id="harvestTime">
+            Crop: {{ data['crop_name'] }}
+        </div>
+        <div id="harvestTime">
+            Sowing Time: {{ data['sowing_time'] }}
+        </div>
+        <div id="harvestTime">
+            Harvesting Time: {{ data['harvesting_time'] }}
+        </div>
+        <div id="harvestTime">
+            Crop Type: {{ data['crop_type'] }}
+        </div>
+        <div id="harvestTime">
+            Crop Period: {{ data['crop_period'] }}
+        </div>
+        
+        </div>
+    </div>
+</body>
+</html>

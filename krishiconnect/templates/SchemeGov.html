@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indian Government Schemes</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='govscheme.css') }}">
+    <style>
+        .navbar {
+            background-color: #0073e6;
+            overflow: hidden;
+        }
+
+        .navbar a {
+            float: left;
+            display: block;
+            color: #fff;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        .navbar a:hover {
+            background-color: #2a8ff4;
+        }
+
+        .navbar::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+        header {
+            background-color: #0073e6;
+            color: #fff;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar nav">
+        <a href="{{ url_for('home') }}">Home</a>
+        <a href="{{ url_for('dashboard') }}">Dashboard</a>
+        
+    </div>
+    <header>
+        <h1>Indian Government Schemes</h1>
+    </header>
+    <div class="container">
+        <!-- <label for="sector">Select a sector:</label>
+        <select id="sector">
+            <option value="agriculture">Agriculture</option>
+            <option value="health">Health</option>
+            <option value="education">Education</option>
+            <option value="finance">Finance</option>
+       
+        </select> -->
+        <form action="" method="post">
+            {{form.hidden_tag()}}
+            {{form.sector}}
+            {{form.submit(id='submit')}}
+        </form>
+        <div id="schemeInfo">
+            <h2>Schemes for Selected Sector:</h2>
+            {% for scheme in data %}
+                <ul id="schemesList">
+                    <div class="scheme">
+                        <div class="name">
+                        <h3>Name: {{ scheme['name'] }}</h3>
+                        </div>
+                        <div class="description">
+                            Description: {{ scheme['description'] }}
+                        </div>
+                        <div class="eligibility">
+                            <h4>Eligibility: {{ scheme['eligibility'] }}</h4>
+                        </div>
+                    </div>
+                </ul>
+            {% endfor %}
+        </div>
+    </div>
+   
+</body>
+</html>

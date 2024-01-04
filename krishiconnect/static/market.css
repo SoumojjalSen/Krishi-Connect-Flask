@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Hind:wght@300&family=Signika:wght@300&display=swap');
+*{
+    margin: 0% ;
+    padding: 0% ;
+    font-family: 'Signika', sans-serif;
+}
+
+table {
+    width: 80vw;
+    height: 80vh;
+}
+.table-container{
+    margin: 10px 70px 70px;
+    box-shadow: 0px 35px 50px rgba( 0, 0, 0, 0.2 );
+}
+.container {
+    width: 100vw;
+    height: 100vh;
+}
+.fl-table {
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: normal;
+    border: none;
+    border-collapse: collapse;
+    width: 90vw;
+    max-width: 100%;
+    white-space: nowrap;
+    background-color: white;
+    align-items: center;
+}
+
+.fl-table td, .fl-table th {
+    text-align: center;
+    padding: 8px;
+}
+
+.fl-table td {
+    border-right: 1px solid #f8f8f8;
+    font-size: 12px;
+}
+
+.fl-table thead th {
+    color: #ffffff;
+    background: #4FC3A1;
+}
+
+
+.fl-table thead th:nth-child(odd) {
+    color: #ffffff;
+    background: #324960;
+}
+
+.fl-table tr:nth-child(even) {
+    background: #F8F8F8;
+}
+.pagination {
+    margin-top: 10px;
+}
+.pagination ul {
+    list-style-type: none;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    
+}
+.pagination li {
+    text-align: center;
+    width: 20%;
+    height: 100%;
+    background-color: beige;
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 20px;
+    margin-right: 20px;
+}
+.prices {
+    display: flex;
+    height: 80%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.form {
+    height: 10%;
+    width: 100%;
+}
+
+form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.field {
+    text-align: center;
+    border-radius: 5px;
+    border-width: 3px 3px 3px 3px;
+    border-color: black;
+    margin-right: 10px;
+}
+
+.submit {
+    width: 10%;
+}
+.nav {
+    width: 100%;
+    height: 10%;
+    background-color: #4FC3A1;
+}

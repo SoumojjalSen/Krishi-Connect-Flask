@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Hind:wght@300&family=Signika:wght@300&display=swap');
+*{
+    margin: 0% ;
+    padding: 0% ;
+    font-family: 'Signika', sans-serif;
+}
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    background-color: #77c3ec;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    overflow-x: hidden;
+}
+
+#navbar {
+    background-color: #333;
+    color: #fff;
+    padding-right: 50px;
+    text-align: right;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; /* Full width navigation bar */
+}
+
+.navbar-links {
+    margin: 0;
+    padding: 0;
+    margin-right: 50px;
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+.navbar-links li {
+    margin-right: 20px;
+}
+
+.navbar-links a {
+    color: #fff; /* White hyperlink color */
+    text-decoration: none;
+}
+
+#container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 20px;
+}
+
+#table {
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 10px;
+    flex-grow: 1;
+    display: flex;
+    width: 80%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px; /* Added margin to move the table below the navigation bar */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid #333;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #333;
+    color: #fff;
+}
+
+.top-right-list {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    list-style: none;
+}
+
+.top-right-list li {
+    margin: 5px 0;
+}
+
+.sell-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+a {
+    text-decoration: none;
+}
+.sell-button a {
+    color: white;
+}

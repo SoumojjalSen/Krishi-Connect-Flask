@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='weather.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Document</title>
+    <style>
+        .navbar {
+            background-color: #0073e6;
+            overflow: hidden;
+        }
+
+        .navbar a {
+            float: left;
+            display: block;
+            color: #fff;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        .navbar a:hover {
+            background-color: #2a8ff4;
+        }
+
+        .navbar::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+        header {
+            background-color: #0073e6;
+            color: #fff;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar nav">
+        <a href="{{ url_for('home') }}">Home</a>
+        <a href="{{ url_for('dashboard') }}">Dashboard</a>
+    </div>
+    <header>
+        <h1>Weather Monitoring</h1>
+    </header>
+    <div class="container">
+    {% for weather in weather_data %}
+    {% if loop.index % 2 == 0 %}
+        <div class="weather-element even">
+            <div class="cover cover-even"></div>
+            <div class="image">
+
+            </div>
+            <div class="data">
+                <div class="date">
+                    <i class="fa-solid fa-calendar-days"></i>
+                    {{ weather['date']}}
+                </div>
+                <div class="temps temps-even">
+                    <div class="temp">
+                        <p>
+                            <i class="fa-solid fa-temperature-full"></i>
+                            Maximum Temperature
+                        </p>
+                        <p>
+                            {{ weather['temps'][0] }} &degC
+                        </p>
+                    </div>
+                    <div class="temp">
+                        <p>
+                            <i class="fa-solid fa-temperature-half"></i>
+                            Average Temperature
+                        </p>
+                        <p>
+                            {{ weather['temps'][1] }} &degC
+                        </p>
+                    </div>
+                    <div class="temp">
+                        <p>
+                            <i class="fa-solid fa-temperature-quarter"></i>
+                            Minimum Temperature
+                        </p>
+                        <p>
+                            {{ weather['temps'][2] }} &degC
+                        </p>
+                    </div>
+                </div>
+                <div class="humidity-even humidity">
+                    <p>
+                        <i class="fa-solid fa-droplet"></i>
+                        Specific Humidity
+                    </p>
+                    <p>
+                        {{ weather['humidity'] }} kg/kg
+                    </p>    
+                </div>
+                <div class="soil-moisture soil-even">
+                    <p>
+                        <i class="fa-solid fa-droplet"></i>
+                        Soil Moisture (Depth of 10 cm)
+                    </p>
+                    <p>
+                        {{ weather['soil_moisture'] }} mm
+                    </p>
+                </div>
+                <div class="wind-speed wind-even">
+                    <p>
+                        <i class="fa-solid fa-wind"></i>
+                        Wind Speed (10 metre radius)
+                    </p>
+                    <p>
+                        {{ weather['wind_speed'] }} m/s
+                    </p>
+                </div>
+                <div class="precip precip-even">
+                    <p>
+                        <i class="fa-solid fa-cloud-rain"></i>
+                        Precipitation
+                    </p>
+                    <p>
+                        {{ weather['precip'] }} mm
+                    </p>
+                </div>
+            </div>
+        </div>
+    {% else %}
+    <div class="weather-element odd">
+        <div class="cover cover-odd"></div>
+        <div class="data">
+            <div class="date">
+                <i class="fa-solid fa-calendar-days" ></i>
+                {{ weather['date']}}
+            </div>
+            <div class="temps temps-odd">
+                <div class="temp">
+                    <p>
+                        <i class="fa-solid fa-temperature-full"></i>
+                        Maximum Temperature
+                    </p>
+                    <p>
+                        {{ weather['temps'][0] }} &degC
+                    </p>
+                </div>
+                <div class="temp">
+                    <p>
+                        <i class="fa-solid fa-temperature-half"></i>
+                        Average Temperature
+                    </p>
+                    <p>
+                        {{ weather['temps'][1] }} &degC
+                    </p>
+                </div>
+                <div class="temp">
+                    <p>
+                        <i class="fa-solid fa-temperature-quarter"></i>
+                        Minimum Temperature
+                    </p>
+                    <p>
+                        {{ weather['temps'][2] }} &degC
+                    </p>
+                </div>
+            </div>
+            <div class="humidity-odd humidity">
+                <p>
+                    <i class="fa-solid fa-droplet"></i>
+                    Specific Humidity
+                </p>
+                <p>
+                    {{ weather['humidity'] }} kg/kg
+                </p>    
+            </div>
+            <div class="soil-moisture soil-odd">
+                <p>
+                    <i class="fa-solid fa-droplet"></i>
+                    Soil Moisture (Depth of 10 cm)
+                </p>
+                <p>
+                    {{ weather['soil_moisture'] }} mm
+                </p>
+            </div>
+            <div class="wind-speed wind-odd">
+                <p>
+                    <i class="fa-solid fa-wind"></i>
+                    Wind Speed (10 metre radius)
+                </p>
+                <p>
+                    {{ weather['wind_speed'] }} m/s
+                </p>
+            </div>
+            <div class="precip precip-odd">
+                <p>
+                    <i class="fa-solid fa-cloud-rain"></i>
+                    Precipitation
+                </p>
+                <p>
+                    {{ weather['precip'] }} mm
+                </p>
+            </div>
+        </div>
+        <div class="image">
+
+        </div>
+        
+    </div>
+    {% endif %}
+    {% endfor %}
+</div>
+</body>
+</html>

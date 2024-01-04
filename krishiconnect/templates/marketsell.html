@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="../reset-meyer.css">
+<link rel="stylesheet" href="{{ url_for('static', filename='marketcreate.css') }}">
+<title>Rounded Corner Boxes</title>
+</head>
+<body>
+<div id="navbar">
+    <ul class="navbar-links">
+        <li><a href="{{ url_for('home') }}">Home</a></li>
+        <li><a href="{{ url_for('dashboard') }}">Dashboard</a></li>
+    </ul>
+</div>
+<div id="container">
+    <div id="box">
+        <h2>Product Information</h2>
+		<form action="" method="post">
+			{{ form.hidden_tag() }}
+			{{ form.item.label }}
+			{{ form.item(id='machinery') }}
+			{{ form.quantity.label }}
+			{{ form.quantity(id='quantity') }}
+			{{ form.cost.label }}
+			{{ form.cost(id='price') }}
+			{{ form.submit(id='submit') }}
+		</form>
+    </div>
+   
+</div>
+</body>
+</html>

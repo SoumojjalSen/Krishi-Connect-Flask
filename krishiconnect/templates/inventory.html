@@ -1,0 +1,82 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../reset-meyer.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='marketplace.css') }}">
+    <title>Inventory</title>
+    <style>
+        .form {
+    height: 10%;
+    width: 100%;
+}
+
+form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    flex-direction: column;
+}
+
+.field {
+    text-align: center;
+    border-radius: 5px;
+    border-width: 3px 3px 3px 3px;
+    border-color: black;
+    margin-right: 10px;
+    height: 100%;
+}
+
+.submit {
+    width: 10%;
+}
+    </style>
+</head>
+<body>
+<div id="navbar">
+    <ul class="navbar-links">
+        <li><a href="{{ url_for('home') }}">Home</a></li>
+        <li><a href="{{ url_for('dashboard') }}">Dashboard</a></li>
+    </ul>
+</div>
+<div id="container">
+    <div class="form">
+        <form action="" method="post">
+            {{ form.hidden_tag() }}
+            {{ form.category(class='field') }}
+            {{ form.submit(class='sell-button') }}
+        </form>
+    </div>
+    <div id="table">
+        <h2>Inventory List</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>S.No</th>
+                    <th>Name</th>
+                    <th>Quantity</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Add table rows with data here -->
+                {% for item in items %}
+                <tr>
+                    <td>{{ loop.index }}</td>
+                    {% if category == 'Harvest' %}
+                    <td>{{ item.crop_name }}</td>
+                    {% else %}
+                    <td>{{ item.livestock_name }}</td>
+                    {% endif %}
+                    <td>{{ item.quantity }}</td>
+                    <td><a href="{{ url_for('delete', id=item.id, category=category) }}">Delete</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <button class="sell-button"><a href="{{ url_for('inventory_add') }}">Add item</a></button>
+    </div>
+</div>
+</body>
+</html>

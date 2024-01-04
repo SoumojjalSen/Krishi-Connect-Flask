@@ -1,0 +1,87 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<link rel="stylesheet" href="{{url_for('static', filename='dashboard.css')}}">
+<title>Dashboard</title>
+</head>
+<body>
+<!-- Navigation bar -->
+<div class="navbar">
+    <a href="{{ url_for('logout') }}">Logout</a>
+</div>
+<div class="dashboard-section">
+    <div class="dashboard-text">DASHBOARD</div>
+</div>
+<div class="container">
+    <div class="box-container">
+        <div class="box box1">
+            <h2>Market Price</h2>
+            
+            <div class="info">
+                <a href="{{ url_for('market') }}">
+                <div class="div">
+                <p>Shows you the latest market prices of various commodities by state</p>
+                </div>
+                </a>
+            </div>
+            
+        </div>
+        
+        <div class="box box2">
+            <h2>Inventory</h2>
+            <div class="info">
+                <a href="{{ url_for('inventory') }}">
+                <div class="div">
+                <p>Shows you your Inventory System</p>
+                </div>
+                </a>
+            </div>
+        </div>
+        <div class="box box3">
+            <h2>Weather Monitoring</h2>
+            <div class="info">
+                <a href="{{ url_for('weather') }}">
+                <div class="div">
+                <p>Shows you the latest and future weather of your locality for you to plan ahead!</p>
+                </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="box-container">
+        <div class="box box4">
+            <div class="tag text-below">Market Place</div>
+            <div class="info">
+                <a href="{{ url_for('marketplace') }}">
+                <div class="div">
+                <p>The marketplace where you can share resources with fellow farmers and build a strong and helpful community!</p>
+                </div>
+                </a>
+            </div>
+        </div>
+        <div class="box box5">
+            <div class="tag text-below">Crop Calendar</div>
+            <div class="info">
+                <a href="{{ url_for('crop_calendar') }}">
+                <div class="div">
+                <p>Empower yourself make informed crop selection and planting decisions by creating personalized, data-driven crop calendars</p>
+                </div>
+                </a>
+            </div>
+        </div>
+        <div class="box box6">
+            <div class="tag text-below">Government Schemes</div>
+            <div class="info">
+                <a href="{{ url_for('schemes') }}">
+                <div class="div">
+                <p>Shows you the government schemes which you can avail</p>
+                </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

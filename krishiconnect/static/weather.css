@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Hind:wght@300&family=Signika:wght@300&display=swap');
+*{
+    margin: 0% ;
+    padding: 0% ;
+    font-family: 'Signika', sans-serif;
+    overflow-x: hidden;
+}
+
+.weather-element {
+    width: 100vw;
+    height: 33vh;
+    display: flex;
+    
+}
+.cover {
+    background-color: #0073e6;
+    height: 33vh;
+    width: 40%;
+    
+    position: absolute;
+    /* transform: rotate(46deg); */
+    z-index: 2;
+    /* clip-path: rect(10px, 20px, 30px, 40px); */
+    
+
+
+}
+.image {
+    background-image: url('rain.jpg');
+    height: 100%;
+    width: 50%;
+    
+}
+.data {
+    height: 100%;
+    width: 80%;
+    z-index: 30;
+}
+.odd {
+    background-color: beige;
+}
+.even {
+    background-color: #0073e6;
+}
+.cover-odd {
+    right: 17%;
+    background-color: beige;
+    clip-path: polygon(0 0, 100% 0, 50% 100%, 0 100%);
+}
+.cover-even {
+    left: 17%;
+    background-color: #0073e6;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 100%);   
+}
+
+.date {
+    position: absolute;
+    left: 50%;
+    /* transform: translateX(-50%); */
+}
+
+.temps {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 33vh;
+}
+
+.temps-even {
+    right: 7%;
+}
+
+.temps-odd {
+    left: 7%;
+}
+
+p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+i {
+    margin-right: 5px;
+}
+
+.temp {
+    height: 33%;
+    font-size: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.humidity-even {
+    right: 24%;
+}
+.humidity-odd {
+    left: 24%;
+}
+.humidity {
+    font-size: 20px;
+    position: absolute;
+    display: flex;
+    /* right: 30%; */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 33vh;
+}
+
+.soil-moisture, .wind-speed, .precip {
+    font-size: 20px;
+    position: absolute;
+    display: flex;
+    margin-bottom: 5%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 33vh;
+}
+
+.soil-even, .wind-even {
+    right: 43%; 
+}
+.soil-odd, .wind-odd {
+    left: 43%; 
+}
+.wind-speed, .precip {
+    margin-top: 5%;
+}
+.precip-even {
+    text-align: center;
+    right: 27%;
+}
+.precip-odd {
+    text-align: center;
+    left: 27%;
+}
+.date {
+    font-size: 40px;
+    margin-top: 1.5%;
+    transform: translateX(-50%);
+}

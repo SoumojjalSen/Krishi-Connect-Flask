@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Krishi Connect</title>
+    <style>
+        /* Add your CSS styles here */
+        body {
+            font-family: Verdana, sans-serif;
+            background-color: #ffffff;
+            margin: 0;
+            padding: 0;
+            background-image: url('./static/bg4.jpg');
+            opacity: 0.9;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .container {
+            background-color: rgba(76, 175, 80, 0.8);
+            color: #ffffff;
+            text-align: center;
+            padding: 50px;
+            /* Add this property to make the container expand to full height */
+            flex: 1;
+            border-radius: 20px; /* Rounded corners */
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Add a shadow */
+            margin: 20px;
+        }
+
+        .content-box {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 20px; /* Rounded corners */
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Add a shadow */
+            margin: 0 auto; /* Center horizontally */
+            width: 80%; /* Narrower width */
+            max-width: 800px; /* Maximum width */
+        }
+
+        .content {
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 36px;
+        }
+
+        h2 {
+            font-size: 24px;
+            color: #4CAF50;
+        }
+
+        p {
+            font-size: 18px;
+            margin: 20px 0;
+            color: #000000;
+        }
+
+        .btn {
+            background-color: #4CAF50;
+            color: #ffffff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+            margin: 10px; /* Add margin */
+        }
+
+        .btn:hover {
+            background-color: #45a049;
+        }
+
+        .footer {
+            background-color: #4CAF50;
+            color: #ffffff;
+            text-align: center;
+            padding: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Replace "Krishi Connect" text with the logo image -->
+        <img src='./static/logo.png' alt="Krishi Connect Logo" width="499">
+        <div class="content-box">
+            <div class="content">
+                <p>We're dedicated to revolutionizing farming through a user-friendly dashboard, simplifying intricate processes for farmers. Agricultural challenges, including market rejection due to variable factors like weather, soil, irrigation, and fertilization, drive our mission. Our pioneering online software offers real-time weather updates, a precise crop calendar, insights into government initiatives, crop tracking, and a resource-sharing marketplace. Future plans encompass corporate integration. By providing these tools, we empower farmers to make informed decisions, optimize practices, and confidently navigate the complexities of agriculture.</p>
+            </div>
+        </div>
+        {% if current_user.is_authenticated %}
+        <button class="btn"><a href="{{ url_for('dashboard') }}">Dashboard</a></button>
+        {% else %}
+        <button class="btn"><a href="{{ url_for('register') }}">Sign Up</a></button>
+        <button class="btn"><a href="{{ url_for('login') }}">Log In</a></button>
+        {% endif %}
+    </div>
+    <div class="footer">
+        <p>Privacy Policy | Terms of Service</p>
+    </div>
+</body>
+</html>
