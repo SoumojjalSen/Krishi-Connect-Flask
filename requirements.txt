@@ -1,0 +1,8 @@
+flask
+flask-sqlalchemy
+flask-login
+flask-wtf
+flask-paginate
+geopy
+requests
+gunicorn
